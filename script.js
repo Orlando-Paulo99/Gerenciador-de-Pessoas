@@ -9,7 +9,15 @@ let dat=document.getElementById('data')
 let endereco=document.getElementById('endr')
 let b=document.getElementById('b')
 
+let p=document.getElementById("erro")
+
 b.addEventListener("click" , async ()=>{
+
+    if(cpf.value.length !=11){
+        alert("digite um cpf correto")
+        return
+    }
+    
     
     const {data,error}= await supabaseCliente
     .from('person')
@@ -22,9 +30,32 @@ b.addEventListener("click" , async ()=>{
         }
     ])
 
-    if(error){
-        alert(error)
+    
+
+   
+    if (error) {
+        if (error.code === '23505') {
+            p.innerHTML="CPF já cadastrado"
+        } else {
+            alert(error.message);
+        }
+        return;
     }
-    alert("sucesso")
+
+
+    p.innerHTML="Cadastro realizado com sucesso"
     console.log(data)
+
+    
+    cpf.value=""
+    nome.value=""
+    dat.value=""
+    endereco.value=""
+
 })
+
+fetch('componentes/menu.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('menu').innerHTML = data;
+  });

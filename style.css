@@ -16,7 +16,7 @@ div{
     justify-content: center;
     left: 26%;
     margin-top: 8%;
-    height: 450px;
+    height: 535px;
     border-radius: 3%;
     border: none;
 
@@ -39,5 +39,12 @@ button{
     height: 50px;
     font-size: 20px;
     border: none;
+    border-radius: 20px;
+    background-color: #212529;
+    color: #ced4da;
     
+}
+
+#p{
+
 }

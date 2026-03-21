@@ -9,13 +9,17 @@
     
 </head>
 <body>
+
+    <section id="menu"></section>
+    
     <div>
         <h1>Cadastro</h1>
-        <input type="number" placeholder="CPF" id="cpf">
+    <input type="number" placeholder="CPF" id="cpf" pattern="\d{11} " title="digite apenas o CPF">
         <input type="text" placeholder="Nome" id="nome">
         <input type="date" placeholder="Data de Nascimento" id="data">
         <input type="text" placeholder="Endereço" id="endr">
         <button id="b">Cadastrar</button>
+        <p id="erro"></p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
