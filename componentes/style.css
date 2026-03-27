@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&family=Stack+Sans+Headline:wght@200..700&display=swap');
+
+body{
+    margin: 0;
+    font-family: "Stack Sans Headline", sans-serif;
+
+}
+
+#btnMenu{
+    font-size: 50px;
+    padding: 1px;    
+    cursor: pointer;
+    position: fixed;
+    left: 280px;
+    top: 10px;
+
+}
+
+nav{
+    position: fixed;
+    left: 0px;
+    height: 100%;
+    background-color: #f8f9fa;
+    width: 20%;
+    top: 0;
+    padding-top: 20px;
+    left: -250px;
+    
+     
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: #01497c;
+    padding: 10px;
+    cursor: pointer;
+
+
+}
+
+nav.active {
+  left: 0;
+}
+
+
