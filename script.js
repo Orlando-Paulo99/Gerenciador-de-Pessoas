@@ -3,13 +3,30 @@ const supabaseCliente = window.supabase.createClient(
   "https://swvsfqjyzkitnaozgqad.supabase.co",
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN3dnNmcWp5emtpdG5hb3pncWFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM4OTEzNjcsImV4cCI6MjA4OTQ2NzM2N30.WaaigbVjD-2jlZDQb5ue91Y13Nre5Ok6p0KTENy2-4E"
 );
-let cpf=document.getElementById('cpf')
-let nome=document.getElementById('nome')
-let dat=document.getElementById('data')
-let endereco=document.getElementById('endr')
-let b=document.getElementById('b')
 
-let p=document.getElementById("erro")
+
+fetch('./componentes/menu.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('menu').innerHTML = data;
+
+    let bt=document.getElementById("btnMenu")
+    let m=document.getElementById("side")
+
+  
+
+});
+
+
+
+    let cpf=document.getElementById('cpf')
+    let nome=document.getElementById('nome')
+    let dat=document.getElementById('data')
+    let endereco=document.getElementById('endr')
+    let b=document.getElementById('b')
+    let p=document.getElementById("erro")
+
+    let todos=document.getElementById("todos")
 
 b.addEventListener("click" , async ()=>{
 
@@ -54,18 +71,3 @@ b.addEventListener("click" , async ()=>{
 
 })
 
-fetch('./componentes/menu.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('menu').innerHTML = data;
-
-    let b=document.getElementById("btnMenu")
-    let m=document.getElementById("side")
-
-    b.addEventListener("click", () =>{
-        console.log("clicou")
-        m.classList.toggle("active")
-
-    })
-
-});
