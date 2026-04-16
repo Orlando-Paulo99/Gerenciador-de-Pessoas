@@ -34,9 +34,10 @@ async function allPerson(todos) {
         todos.innerHTML+=
         `
         <details>
-            <summary>${element.nome}</summary>
-            <p>${element.nascimento}</p>
-            <p>${element.endereco}</p>
+            <summary>CPF: ${element.cpf} </summary>
+            <p>Nome: ${element.nome}</p>
+            <p>Data de Nascimento: ${element.nascimento}</p>
+            <p>Endereço: ${element.endereco}</p>
      
         </details>
     `;

@@ -64,16 +64,53 @@ input{
     align-items: center;
     position: relative;
     left: 40%;
+    color: #01497c;
 }
 
 .lista{
     justify-content: center;
     position: relative;
     align-items: center;
-    left: 350px;
+    left: 290px;
     display: block;
     color: #212529;
-    width: 50%;
-    background-color:aqua;
-    width: 80%;
+    width: 70%;
+    background-color:#f8f9fa;
+    border-radius: 10px;
+    border: none;
+    
+   
+    
+}
+
+.lista p{
+    color: #22223b;
+    margin-bottom: 20px;
+     padding-left: 50px;
+    background-color: o;
+}
+.lista summary{
+    cursor: pointer;
+    display: block;   
+    padding-bottom: 20px;
+    padding-top: 40px;
+    color: #01497c;
+    border-radius: 50px;
+    border-color: #212529;
+
+    padding-left: 50px;
+}
+.procurar{
+    position: relative;
+    background-color: #f8f9fa;
+    border-color: #339AF0;
+    border-style: groove;
+    border-radius: 20px;
+    color: #1E8449;
+    width: 25%;
+    height: 45px;
+    justify-content: center;
+    left: 25%;
+    margin-bottom: 5%;
+    margin: 20px;
 }
