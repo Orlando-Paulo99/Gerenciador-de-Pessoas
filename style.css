@@ -114,3 +114,11 @@ input{
     margin-bottom: 5%;
     margin: 20px;
 }
+
+
+#result{
+    background-color: #212529;
+    position: relative;
+    left: 50%;
+    color: #fff;
+}

@@ -1,3 +1,4 @@
+//const { documentElement } = require("jquery/src/var/documentElement.js");
 
 const supabaseCliente = window.supabase.createClient(
   "https://swvsfqjyzkitnaozgqad.supabase.co",
@@ -54,3 +55,55 @@ document.addEventListener("DOMContentLoaded", () => {
         allPerson(lista);
     }
 });
+
+
+/*** Pesquisar CPF */
+const p_Cpf = document.getElementById("procurar")
+const lista = document.getElementById("lista")
+
+p_Cpf.addEventListener("input", async () => {
+
+    const valor = p_Cpf.value
+
+    
+    if (valor.length === 0) {
+        lista.innerHTML = "" 
+        return
+    }
+
+    const { data, error } = await supabaseCliente
+        .from("person")
+        .select("*")
+        .ilike("cpf", `%${valor}%`)
+
+    if (error) {
+        console.error(error)
+        return
+    }
+
+  
+    lista.innerHTML = ""
+
+    if (data.length === 0) {
+        lista.innerHTML = "<p>Nenhum resultado encontrado</p>"
+        return
+    }
+
+
+    data.forEach(pessoa => {
+        const div = document.createElement("div")
+        div.innerHTML = 
+        
+         `
+        <details>
+            <summary>CPF: ${pessoa.cpf} </summary>
+            <p>Nome: ${pessoa.nome}</p>
+            <p>Data de Nascimento: ${pessoa.nascimento}</p>
+            <p>Endereço: ${pessoa.endereco}</p>
+     
+        </details>
+    `
+        lista.appendChild(div)
+    })
+
+})
