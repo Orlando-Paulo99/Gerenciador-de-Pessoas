@@ -6,6 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="./componentes/style.css">
     <link rel="stylesheet" href="style.css">
+
+     <script type="text/javascript"
+        src="https://code.jquery.com/jquery-3.6.4.js"
+    ></script>
 </head>
 <body>
       
@@ -15,7 +19,66 @@
 
       <input type="search" class="procurar" id="procurar" placeholder="Digite o CPF">
       
+      <div id="atualizar" class="atualizar">
+
+        <!--
+           <details>
+            <summary>🖋️Editar</summary>
+
+            <label>CPF</label>
+            <input type="text">
+
+            <label>Nome</label>
+            <input type="text">
+
+            <label>Data de Nascimento</label>
+            <input type="email">
+
+            <label>Endereço</label>
+            <input type="email">
+
+            <button>Enviar</button>
+        </details>
+        
+
+        -->
+     
+
+        <button id="abrir">🖋️Editar</button>
+        
       
+          <div id="popoup">
+             <label for="">CPF</label>
+            <input type="text" placeholder="CPF que deseja atualizar" id="cpf"><br>
+
+              <label for="">Nome</label>
+              <input type="text" placeholder="Digite seu nome" id="newNome"><br>
+              <label for="">Data de Nascimento</label>
+              <input type="date" placeholder="Data de Nascimento" id="newNaci">
+              <label for="">Endereço</label>
+              <input type="text" placeholder="Digite seu nome" id="newEndereco">
+              <button id="fechar">❌</button>
+              <button id="b_atualizar">Enviar</button>
+          </div>
+
+        <button id="abrir">Ecluir</button>
+
+      
+          <!---
+          
+          <details>
+          <summary>🗑️Excluir</summary>
+
+            <label>Digite o CPF</label>
+            <input type="email" placeholder="Digite aqui o CPF">
+
+        </details> 
+          -->
+           
+
+        
+      </div>
+
 
       <div id="lista" class="lista">
        

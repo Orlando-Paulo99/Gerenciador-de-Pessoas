@@ -122,3 +122,71 @@ input{
     left: 50%;
     color: #fff;
 }
+
+
+/** Atualizar os Dados*/
+
+
+.atualizar{
+   display:flex;
+    gap:20px;
+    flex-wrap:wrap; /* permite crescer */
+    align-items:flex-start;
+
+    position:relative; /* ou remova position */
+    left:25%;
+    padding: auto;
+    bottom:auto;
+    margin:30px auto;
+    width:43%;
+    top: -90px;
+    
+}
+
+
+.atualizar button{
+    border-radius: 10px;
+    padding: 2px auto;
+    height: 30px;
+    width: 80px;
+    cursor: pointer;
+    color: #01497c;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+    
+}
+
+
+.atualizar details {
+    
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+    
+  
+}
+
+.atualizar summary{
+    cursor: pointer;
+    
+  color: ;
+  height: 40px;
+}
+
+.atualizar input{
+    width: 60%;
+    border-color: #01497c;
+    border-style: groove;
+    border-radius: 20px;
+}
+
+
+#popoup{
+    display: none;
+
+    width: 80%;
+    position: relative;
+    background-color: #01497c;
+    padding: 50px;
+    
+}

@@ -107,3 +107,67 @@ p_Cpf.addEventListener("input", async () => {
     })
 
 })
+
+
+/*** Editar usuarios */
+
+$(document).ready(function(){
+
+    $("#abrir").click(function(){
+        $(" #popoup").fadeIn();
+    })
+
+    $("#fechar").click(function(){
+        $(" #popoup").fadeOut();
+    })
+        
+})
+
+const b_atualizar = document.getElementById("b_atualizar");
+
+$(document).ready(function(){
+
+  $(b_atualizar).click(async function(){
+
+      const n_nome = $("#newNome").val();
+      const n_nascimento = $("#newNaci").val();
+      const n_endereco = $("#newEndereco").val();
+      const n_cpf = $("#cpf").val();
+
+      // verifica se CPF existe
+      const { data: pessoa } = await supabaseCliente
+        .from("person")
+        .select("cpf")
+        .eq("cpf", n_cpf)
+        .maybeSingle();
+
+      if(!pessoa){
+         alert("CPF não encontrado");
+         return;
+      }
+
+      // atualiza
+      const { data, error } = await supabaseCliente
+        .from("person")
+        .update({
+          nome: n_nome,
+          nascimento: n_nascimento,
+          endereco: n_endereco
+        })
+        .eq("cpf", n_cpf)
+        .select();
+
+      if(error){
+         console.log(error);
+         return;
+      }
+
+      alert("Usuário atualizado com sucesso!");
+      $("#cpf").val("")
+      $("#newNome").val("")
+      $("#newNaci").val("")
+      $("#newEndereco").val("")
+
+  });
+
+});
