@@ -52,4 +52,45 @@ nav.active {
   left: 0;
 }
 
+@media (max-width: 899px){
+    nav{
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: 0;
+        padding: 8px 0;
+        z-index: 10;
+        box-shadow: 0 2px 12px rgba(1, 73, 124, 0.12);
+    }
+
+    nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        justify-content: center;
+        margin: 0;
+        padding: 0 8px;
+        font-size: 16px;
+    }
+
+    nav a{
+        padding: 8px;
+        text-align: center;
+    }
+
+    #btnMenu{
+        display: none;
+    }
+}
+
+@media (max-width: 480px){
+    nav ul{
+        font-size: 14px;
+    }
+
+    nav a{
+        padding: 6px;
+    }
+}
+
 
