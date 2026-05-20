@@ -1,5 +1,7 @@
 //const { documentElement } = require("jquery/src/var/documentElement.js");
 
+//const { error } = require("jquery");
+
 const supabaseCliente = window.supabase.createClient(
   "https://swvsfqjyzkitnaozgqad.supabase.co",
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN3dnNmcWp5emtpdG5hb3pncWFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM4OTEzNjcsImV4cCI6MjA4OTQ2NzM2N30.WaaigbVjD-2jlZDQb5ue91Y13Nre5Ok6p0KTENy2-4E"
@@ -175,4 +177,41 @@ $(document).ready(function(){
 
 });
 
+/* * Exxcluir uusuario*/
+
+$(document).ready(function(){
+
+    $("#abrirDel").click(function(){
+        $(" #popoupDele").fadeIn();
+    })
+
+    $("#fecharDel").click(function(){
+        $(" #popoupDele").fadeOut();
+    })
+        
+})
+
+const b_deletar=document.getElementById("b_deletar")
+
+
+
+
+$(b_deletar).click(async function(){
+
+    let cpf_delete=document.getElementById("cpf_delete").value
+
+
+    const {data,error} = await supabaseCliente
+        .from('person')
+        .delete()
+        .eq('cpf', cpf_delete)
+        .select()
+
+        if(error){
+            console.log(error)
+            return
+        }
+
+
+})
 

@@ -199,7 +199,7 @@ input{
 
 
 
-#popoup{
+#popoup  {
     display: none;
 
     width: min(100%, 520px);
@@ -208,6 +208,10 @@ input{
     padding: 50px 24px 24px;
     border-radius: 20px;
     
+}
+
+#popoupDele{
+    display: none;
 }
 
 @media (min-width: 900px){
