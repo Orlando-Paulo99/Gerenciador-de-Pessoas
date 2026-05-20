@@ -212,6 +212,8 @@ $(b_deletar).click(async function(){
             return
         }
 
+        alert("Excluido  com sucesso")
+        location.reload()
 
 })
 
